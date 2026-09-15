@@ -6,7 +6,7 @@
         const CONFIG = {
             materia: "Ingeniería de Software",
             profesor: "Ing. Ricardo Arturo Elizalde Hernández",
-            logoUrl: "https://via.placeholder.com/180x70?text=Mi+Universidad" // O ruta local: "img/logo.png"
+            logoUrl: "img/tecmi.png" // O ruta local: "img/logo.png"
         };
 
         // 2. ARREGLO DE EXPOSICIONES (30 temas/alumnos en total = 6 por día × 5 días)
