@@ -1,0 +1,180 @@
+        /* ==========================================
+           ESTILOS GENERALES Y DISEÑO
+           ========================================== */
+        /* :root {
+            --primary-color: #004085;
+            --secondary-color: #007bff;
+            --background-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --accent-color: #e9ecef;
+            --border-radius: 12px;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        } */
+
+        /* ==========================================
+        NUEVA PALETA DE COLORES: VERDES Y BLANCO
+        ========================================== */
+        :root {
+        --primary-color: #1b4332;      /* Verde oscuro elegante para encabezados */
+        --secondary-color: #2d6a4f;    /* Verde medio para detalles y acentos */
+        --background-color: #f4f7f5;   /* Fondo general con un matiz verde muy claro */
+        --card-bg: #ffffff;           /* Blanco puro para las tarjetas */
+        --text-color: #1a251e;         /* Texto oscuro para buen contraste */
+        --accent-color: #d8f3dc;       /* Verde menta suave para efectos */
+        --border-radius: 12px;
+        --shadow: 0 4px 15px rgba(27, 67, 50, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ENCABEZADO */
+        header {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            border-left: 6px solid var(--primary-color);
+        }
+
+        .header-info {
+            flex: 1 1 300px;
+        }
+
+        .header-info h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .header-info p {
+            font-size: 1.05rem;
+            color: #555;
+        }
+
+        .header-info strong {
+            color: var(--primary-color);
+        }
+
+        .logo-container {
+            max-width: 180px;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-container img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* REJILLA DEL CALENDARIO: Forzar 5 columnas de igual tamaño */
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* Crea exactamente 5 columnas iguales */
+            gap: 15px;
+        }
+
+        .day-column {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease;
+        }
+
+        .day-column:hover {
+            transform: translateY(-4px);
+        }
+
+        .day-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .day-header h2 {
+            font-size: 1.2rem;
+            text-transform: capitalize;
+        }
+
+        .day-header span {
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+
+        .expo-list {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex-grow: 1;
+        }
+
+        /* TARJETAS DE EXPOSICIÓN */
+        .expo-card {
+            background-color: var(--background-color);
+            border-left: 4px solid var(--secondary-color);
+            padding: 12px 15px;
+            border-radius: 6px;
+        }
+
+        .expo-time {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .expo-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #222;
+        }
+
+        /* RESPONSIVO */
+        /* Ajuste responsivo para celulares o pantallas pequeñas */
+        @media (max-width: 900px) {
+            .calendar-grid {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* En pantallas chicas se acomodarán según quepan */
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                text-align: center;
+                justify-content: center;
+            }
+            .header-info {
+                text-align: center;
+            }
+        } 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario de Exposiciones</title>
+    <!-- Vinculación correcta del archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Encabezado con datos de la Universidad -->
+        <header>
+            <div class="header-info">
+                <h1 id="materia-nombre">Materia: [Nombre de la Materia]</h1>
+                <p><strong>Profesor:</strong> <span id="profesor-nombre">[Nombre del Profesor]</span></p>
+                <p><strong>Horario de Exposiciones:</strong> 14:30 - 16:30 hrs</p>
+            </div>
+            <div class="logo-container">
+                <img id="logo-uni" src="https://via.placeholder.com/150x60?text=Logo+Universidad" alt="Logo Universidad">
+            </div>
+        </header>
+
+        <!-- Calendario dinámico -->
+        <main class="calendar-grid" id="calendar"></main>
+    </div>
+
+    <!-- Vinculación del archivo JS -->
+    <script src="app.js"></script>
+</body>
+</html>
