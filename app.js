@@ -13,15 +13,15 @@
         // Puedes cambiar los nombres libremente. Se asignarán automáticamente en orden.
         const EXPOSICIONES = [
             /*  lunes */
-            "01. Alumno 01: Cesar Julian Esponceda Pantoja",
+            "01. Cesar Julian Esponceda Pantoja",
             "02. Alumno 02: Pendiente",
-            "03. Alumno 03: Carlos Jesús Cepeda Coronado",
+            "03. Carlos Jesús Cepeda Coronado",
             "04. Alumno 04: Pendiente",
             "05. Alumno 05: Pendiente",
             "06. Alumno 06: Pendiente",
             /* martes */
-            "07. Alumno 07: Alan Anduaga Lleverino",
-            "08. Alumno 08: Yamil Alejandro Ramirez Perez",
+            "07. Alan Anduaga Lleverino",
+            "08. Yamil Alejandro Ramirez Perez",
             "09. Alumno 09: Pendiente",
             "10. Alumno 10: Pendiente",
             "11. Alumno 11: Pendiente",
@@ -33,12 +33,14 @@
             "16. Alumno 16: Pendiente",
             "17. Alumno 17: Pendiente",
             "18. Alumno 18: Pendiente",
+            /* jueves */
             "19. Alumno 19: Pendiente",
             "20. Alumno 20: Pendiente",
             "21. Alumno 21: Pendiente",
             "22. Alumno 22: Pendiente",
             "23. Alumno 23: Pendiente",
             "24. Alumno 24: Pendiente",
+            /* viernes */
             "25. Alumno 25: Pendiente",
             "26. Alumno 26: Pendiente",
             "27. Alumno 27: Pendiente",
