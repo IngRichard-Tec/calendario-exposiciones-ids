@@ -12,18 +12,21 @@
         // 2. ARREGLO DE EXPOSICIONES (30 temas/alumnos en total = 6 por día × 5 días)
         // Puedes cambiar los nombres libremente. Se asignarán automáticamente en orden.
         const EXPOSICIONES = [
-            "01. Alumno 01: Pendiente",
+            /*  lunes */
+            "01. Alumno 01: Cesar Julian Esponceda Pantoja",
             "02. Alumno 02: Pendiente",
-            "03. Alumno 03: Pendiente",
+            "03. Alumno 03: Carlos Jesús Cepeda Coronado",
             "04. Alumno 04: Pendiente",
             "05. Alumno 05: Pendiente",
             "06. Alumno 06: Pendiente",
+            /* martes */
             "07. Alumno 07: Alan Anduaga Lleverino",
             "08. Alumno 08: Yamil Alejandro Ramirez Perez",
             "09. Alumno 09: Pendiente",
             "10. Alumno 10: Pendiente",
             "11. Alumno 11: Pendiente",
             "12. Alumno 12: Pendiente",
+            /* miércoles */
             "13. Alumno 13: Pendiente",
             "14. Alumno 14: Pendiente",
             "15. Alumno 15: Pendiente",
