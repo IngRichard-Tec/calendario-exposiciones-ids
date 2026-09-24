@@ -24,11 +24,11 @@
             "08. Yamil Alejandro Ramirez Perez",
             "09. Alumno 09: Pendiente",
             "10. Alumno 10: Pendiente",
-            "11. Alumno 11: Pendiente",
+            "11. Katia Isabella Vazquez Vazquez",
             "12. Dana Elena Zertuche Castro",
             /* miércoles */
             "13. Roberto Carlos Garcia Alanis",
-            "14. Alumno 14: Pendiente",
+            "14. Melissa Yaretzi Hernandez Flores",
             "15. Alumno 15: Pendiente",
             "16. Alumno 16: Pendiente",
             "17. Alumno 17: Pendiente",
@@ -43,8 +43,8 @@
             /* viernes */
             "25. Andres Herrera Garza",
             "26. Diego Eduardo Garcia Mireles",
-            "27. Alumno 27: Pendiente",
-            "28. Alumno 28: Pendiente",
+            "27. Hector Emiliano Leal Prieto",
+            "28. Diego Emilio Salas Cruz",
             "29. Alumno 29: Pendiente",
             "30. Alumno 30: Pendiente",
         ];
