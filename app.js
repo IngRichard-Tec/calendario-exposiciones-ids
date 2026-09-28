@@ -17,15 +17,15 @@
             "02. Jail Majorek Casas Sanchez",
             "03. Carlos Jesús Cepeda Coronado",
             "04. Hugo David Ruiz Moreno",
-            "06. Diego Villarreal Martinez",
-            "10. Carlos Gibran Sanchez Galvan",
+            "05. Diego Villarreal Martinez",
+            "06. Carlos Gibran Sanchez Galvan",
             /* martes */
             "07. Alan Anduaga Lleverino",
             "08. Yamil Alejandro Ramirez Perez",
             "09. Sebastian Daniel Mata Treviño",
-            "11. Katia Isabella Vazquez Vazquez",
-            "12. Dana Elena Zertuche Castro",
-            "25. Hector Emiliano Leal Prieto",
+            "10. Katia Isabella Vazquez Vazquez",
+            "11. Dana Elena Zertuche Castro",
+            "12. Hector Emiliano Leal Prieto",
             /* miércoles */
             "13. Roberto Carlos Garcia Alanis",
             "14. Melissa Yaretzi Hernandez Flores",
@@ -41,10 +41,10 @@
             "23. Andres Herrera Garza",
             "24. Diego Eduardo Garcia Mireles",
             /* viernes */
-            "26. Diego Emilio Salas Cruz",
-            "27. Daniel Alejandro Gonzalez Salazar",
-            "28. Alvaro Marcelo Silva Amaro",
-            "05. Areli Soraya Perdue Centeno",
+            "25. Diego Emilio Salas Cruz",
+            "26. Daniel Alejandro Gonzalez Salazar",
+            "27. Alvaro Marcelo Silva Amaro",
+            "28. Areli Soraya Perdue Centeno",
         ];
 
         // 3. Estructura de Días
