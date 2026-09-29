@@ -203,3 +203,18 @@
         color: #6c757d;
         text-decoration: line-through; /* Opcional: Tacha los temas ya vistos */
         }
+
+        .expo-list {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.expo-card {
+    background-color: #f8fbfa;
+    border-left: 4px solid var(--secondary-color);
+    padding: 10px 12px; /* Reducido un poco para que quepan holgadamente */
+    border-radius: 6px;
+}

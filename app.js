@@ -26,87 +26,88 @@
             "10. Katia Isabella Vazquez Vazquez",
             "11. Dana Elena Zertuche Castro",
             "12. Hector Emiliano Leal Prieto",
+            "13. Areli Soraya Perdue Centeno",
             /* miércoles */
-            "13. Roberto Carlos Garcia Alanis",
-            "14. Melissa Yaretzi Hernandez Flores",
-            "15. Ricardo Aldair Delgado de la Fuente",
-            "16. César Gabriel Montoya Caballero",
-            "17. Daniel Espinosa Sanchez*",
-            "18. Alejandro Garcia Pelayo Banda",
+            "14. Roberto Carlos Garcia Alanis",
+            "15. Melissa Yaretzi Hernandez Flores",
+            "16. Ricardo Aldair Delgado de la Fuente",
+            "17. César Gabriel Montoya Caballero",
+            "18. Daniel Espinosa Sanchez*",
+            "19. Alejandro Garcia Pelayo Banda",
             /* jueves */
-            "19. Gael Alejandro Castro",
-            "20. Daniel Espinoza Sanchez",
-            "21. Arturo Uriel Gonzalez Villarreal",
-            "22. Emilio Gil Garcia*",
-            "23. Andres Herrera Garza",
-            "24. Diego Eduardo Garcia Mireles",
+            "20. Gael Alejandro Castro",
+            "21. Daniel Espinoza Sanchez",
+            "22. Arturo Uriel Gonzalez Villarreal",
+            "23. Emilio Gil Garcia*",
+            "24. Andres Herrera Garza",
+            "25. Diego Eduardo Garcia Mireles",
             /* viernes */
-            "25. Diego Emilio Salas Cruz",
-            "26. Daniel Alejandro Gonzalez Salazar",
-            "27. Alvaro Marcelo Silva Amaro",
-            "28. Areli Soraya Perdue Centeno",
+            "26. Diego Emilio Salas Cruz",
+            "27. Daniel Alejandro Gonzalez Salazar",
+            "28. Alvaro Marcelo Silva Amaro",
+
         ];
 
-       // 1. Estructura de Días con estado de completado
+// 1. Estructura de Días con cantidad de exposiciones por día
 const DIAS = [
-    { nombre: "Lunes", fecha: "28 de Septiembre", completado: true },  // CAMBIA A true/false SEGÚN EL DÍA
-    { nombre: "Martes", fecha: "29 de Septiembre", completado: false },
-    { nombre: "Miércoles", fecha: "30 de Septiembre", completado: false },
-    { nombre: "Jueves", fecha: "1 de Octubre", completado: false },
-    { nombre: "Viernes", fecha: "2 de Octubre", completado: false }
+    { nombre: "Lunes", fecha: "28 de Septiembre", completado: true, cantidadExpos: 6 },  
+    { nombre: "Martes", fecha: "29 de Septiembre", completado: true, cantidadExpos: 7 },
+    { nombre: "Miércoles", fecha: "30 de Septiembre", completado: false, cantidadExpos: 6 },
+    { nombre: "Jueves", fecha: "1 de Octubre", completado: false, cantidadExpos: 6 },
+    { nombre: "Viernes", fecha: "2 de Octubre", completado: false, cantidadExpos: 6 }
 ];
 
-// 2. Cargar Información en el Encabezado
-document.getElementById('materia-nombre').textContent = CONFIG.materia;
-document.getElementById('profesor-nombre').textContent = CONFIG.profesor;
-document.getElementById('logo-uni').src = CONFIG.logoUrl;
-
-// 3. Generar Horarios
-function generarHorarios(horaInicioMinutos, cantidad, duracionMinutos) {
+// 2. Función para calcular horarios dinámicos según el total de exposiciones del día
+function generarHorariosDia(cantidad) {
     const horarios = [];
-    let actual = horaInicioMinutos;
+    const inicioTotal = 14 * 60 + 30; // 14:30 en minutos (870 min)
+    const duracionTotal = 120;         // 120 minutos (de 14:30 a 16:30)
+    const duracionPorExpo = duracionTotal / cantidad; // Calcula minutos por exposición
+
+    let actual = inicioTotal;
 
     for (let i = 0; i < cantidad; i++) {
         let inicioHoras = Math.floor(actual / 60);
-        let inicioMins = actual % 60;
+        let inicioMins = Math.round(actual % 60);
         
-        let finTemp = actual + duracionMinutos;
+        let finTemp = actual + duracionPorExpo;
         let finHoras = Math.floor(finTemp / 60);
-        let finMins = finTemp % 60;
+        let finMins = Math.round(finTemp % 60);
 
-        let formatoInicio = `${inicioHoras}:${inicioMins === 0 ? '00' : inicioMins}`;
-        let formatoFin = `${finHoras}:${finMins === 0 ? '00' : finMins}`;
+        // Formato con ceros a la izquierda para minutos (ej. 14:05)
+        let strInicioMins = inicioMins < 10 ? `0${inicioMins}` : `${inicioMins}`;
+        let strFinMins = finMins < 10 ? `0${finMins}` : `${finMins}`;
 
-        horarios.push(`${formatoInicio} - ${formatoFin}`);
-        actual += duracionMinutos;
+        horarios.push(`${inicioHoras}:${strInicioMins} - ${finHoras}:${strFinMins}`);
+        actual += duracionPorExpo;
     }
     return horarios;
 }
 
-const horariosExpos = generarHorarios(14 * 60 + 30, 6, 20);
-
-// 4. Renderizar Calendario
+// 3. Renderizar Calendario
 const calendarContainer = document.getElementById('calendar');
 let expoIndex = 0;
 
 DIAS.forEach((dia) => {
     const dayColumn = document.createElement('div');
-    // Agrega la clase 'dia-pasado' si completado es true
     dayColumn.className = `day-column ${dia.completado ? 'dia-pasado' : ''}`;
 
     dayColumn.innerHTML = `
         <div class="day-header">
             <h2>${dia.nombre} ${dia.completado ? '✓' : ''}</h2>
-            <span>${dia.fecha}</span>
+            <span>${dia.fecha} (${dia.cantidadExpos} expos)</span>
         </div>
     `;
 
     const expoList = document.createElement('div');
     expoList.className = 'expo-list';
 
-    for (let i = 0; i < 6; i++) {
+    // Genera horarios específicos para la cantidad de expos de ESTE día
+    const horariosDelDia = generarHorariosDia(dia.cantidadExpos);
+
+    for (let i = 0; i < dia.cantidadExpos; i++) {
         const tituloExpo = EXPOSICIONES[expoIndex] || "Espacio Libre / Por asignar";
-        const horario = horariosExpos[i];
+        const horario = horariosDelDia[i];
 
         const card = document.createElement('div');
         card.className = 'expo-card';
@@ -116,7 +117,7 @@ DIAS.forEach((dia) => {
         `;
 
         expoList.appendChild(card);
-        expoIndex++;
+        expoIndex++; // Pasa a la siguiente exposición del arreglo general
     }
 
     dayColumn.appendChild(expoList);
