@@ -178,3 +178,28 @@
                 text-align: center;
             }
         } 
+
+        /* ==========================================
+        ESTILOS PARA DÍAS COMPLETADOS / PASADOS
+        ========================================== */
+        .day-column.dia-pasado {
+        opacity: 0.75;
+        }
+
+        .day-column.dia-pasado .day-header {
+        background-color: #52796f; /* Verde apagado / grisáceo */
+        }
+
+        .day-column.dia-pasado .expo-card {
+        background-color: #e9ecef;
+        border-left-color: #84a98c;
+        }
+
+        .day-column.dia-pasado .expo-time {
+        color: #52796f;
+        }
+
+        .day-column.dia-pasado .expo-title {
+        color: #6c757d;
+        text-decoration: line-through; /* Opcional: Tacha los temas ya vistos */
+        }

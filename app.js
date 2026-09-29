@@ -47,86 +47,78 @@
             "28. Areli Soraya Perdue Centeno",
         ];
 
-        // 3. Estructura de Días
-        const DIAS = [
-            { nombre: "Lunes", fecha: "28 de Septiembre" },
-            { nombre: "Martes", fecha: "29 de Septiembre" },
-            { nombre: "Miércoles", fecha: "30 de Septiembre" },
-            { nombre: "Jueves", fecha: "1 de Octubre" },
-            { nombre: "Viernes", fecha: "2 de Octubre" }
-        ];
+       // 1. Estructura de Días con estado de completado
+const DIAS = [
+    { nombre: "Lunes", fecha: "28 de Septiembre", completado: true },  // CAMBIA A true/false SEGÚN EL DÍA
+    { nombre: "Martes", fecha: "29 de Septiembre", completado: false },
+    { nombre: "Miércoles", fecha: "30 de Septiembre", completado: false },
+    { nombre: "Jueves", fecha: "1 de Octubre", completado: false },
+    { nombre: "Viernes", fecha: "2 de Octubre", completado: false }
+];
 
-        /* ==========================================
-           LÓGICA EN JAVASCRIPT
-           ========================================== */
+// 2. Cargar Información en el Encabezado
+document.getElementById('materia-nombre').textContent = CONFIG.materia;
+document.getElementById('profesor-nombre').textContent = CONFIG.profesor;
+document.getElementById('logo-uni').src = CONFIG.logoUrl;
 
-        // Cargar Información en el Encabezado
-        document.getElementById('materia-nombre').textContent = CONFIG.materia;
-        document.getElementById('profesor-nombre').textContent = CONFIG.profesor;
-        document.getElementById('logo-uni').src = CONFIG.logoUrl;
+// 3. Generar Horarios
+function generarHorarios(horaInicioMinutos, cantidad, duracionMinutos) {
+    const horarios = [];
+    let actual = horaInicioMinutos;
 
-        // Función para calcular los rangos de tiempo (14:30 a 16:30 repartido en 6 bloques = 20 min c/u)
-        function generarHorarios(horaInicioMinutos, cantidad, duracionMinutos) {
-            const horarios = [];
-            let actual = horaInicioMinutos;
+    for (let i = 0; i < cantidad; i++) {
+        let inicioHoras = Math.floor(actual / 60);
+        let inicioMins = actual % 60;
+        
+        let finTemp = actual + duracionMinutos;
+        let finHoras = Math.floor(finTemp / 60);
+        let finMins = finTemp % 60;
 
-            for (let i = 0; i < cantidad; i++) {
-                let inicioHoras = Math.floor(actual / 60);
-                let inicioMins = actual % 60;
-                
-                let finTemp = actual + duracionMinutos;
-                let finHoras = Math.floor(finTemp / 60);
-                let finMins = finTemp % 60;
+        let formatoInicio = `${inicioHoras}:${inicioMins === 0 ? '00' : inicioMins}`;
+        let formatoFin = `${finHoras}:${finMins === 0 ? '00' : finMins}`;
 
-                // Formato hh:mm
-                let formatoInicio = `${inicioHoras}:${inicioMins === 0 ? '00' : inicioMins}`;
-                let formatoFin = `${finHoras}:${finMins === 0 ? '00' : finMins}`;
+        horarios.push(`${formatoInicio} - ${formatoFin}`);
+        actual += duracionMinutos;
+    }
+    return horarios;
+}
 
-                horarios.push(`${formatoInicio} - ${formatoFin}`);
-                actual += duracionMinutos;
-            }
-            return horarios;
-        }
+const horariosExpos = generarHorarios(14 * 60 + 30, 6, 20);
 
-        // Generar 6 intervalos de 20 minutos empezando a las 14:30 (870 minutos acumulados desde las 00:00)
-        const horariosExpos = generarHorarios(14 * 60 + 30, 6, 20);
+// 4. Renderizar Calendario
+const calendarContainer = document.getElementById('calendar');
+let expoIndex = 0;
 
-        // Renderizar Calendario
-        const calendarContainer = document.getElementById('calendar');
-        let expoIndex = 0;
+DIAS.forEach((dia) => {
+    const dayColumn = document.createElement('div');
+    // Agrega la clase 'dia-pasado' si completado es true
+    dayColumn.className = `day-column ${dia.completado ? 'dia-pasado' : ''}`;
 
-        DIAS.forEach((dia) => {
-            // Crear columna del día
-            const dayColumn = document.createElement('div');
-            dayColumn.className = 'day-column';
+    dayColumn.innerHTML = `
+        <div class="day-header">
+            <h2>${dia.nombre} ${dia.completado ? '✓' : ''}</h2>
+            <span>${dia.fecha}</span>
+        </div>
+    `;
 
-            // Cabecera del día
-            dayColumn.innerHTML = `
-                <div class="day-header">
-                    <h2>${dia.nombre}</h2>
-                    <span>${dia.fecha}</span>
-                </div>
-            `;
+    const expoList = document.createElement('div');
+    expoList.className = 'expo-list';
 
-            const expoList = document.createElement('div');
-            expoList.className = 'expo-list';
+    for (let i = 0; i < 6; i++) {
+        const tituloExpo = EXPOSICIONES[expoIndex] || "Espacio Libre / Por asignar";
+        const horario = horariosExpos[i];
 
-            // Agregar las 6 exposiciones correspondientes al día
-            for (let i = 0; i < 6; i++) {
-                const tituloExpo = EXPOSICIONES[expoIndex] || "Espacio Libre / Por asignar";
-                const horario = horariosExpos[i];
+        const card = document.createElement('div');
+        card.className = 'expo-card';
+        card.innerHTML = `
+            <span class="expo-time">🕒 ${horario} hrs</span>
+            <div class="expo-title">${tituloExpo}</div>
+        `;
 
-                const card = document.createElement('div');
-                card.className = 'expo-card';
-                card.innerHTML = `
-                    <span class="expo-time">🕒 ${horario} hrs</span>
-                    <div class="expo-title">${tituloExpo}</div>
-                `;
+        expoList.appendChild(card);
+        expoIndex++;
+    }
 
-                expoList.appendChild(card);
-                expoIndex++;
-            }
-
-            dayColumn.appendChild(expoList);
-            calendarContainer.appendChild(dayColumn);
-        });
+    dayColumn.appendChild(expoList);
+    calendarContainer.appendChild(dayColumn);
+});
