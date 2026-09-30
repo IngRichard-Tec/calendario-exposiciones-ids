@@ -45,7 +45,7 @@
             "15. Melissa Yaretzi Hernandez Flores",
             "16. Ricardo Aldair Delgado de la Fuente",
             "17. César Gabriel Montoya Caballero",
-            "18. Daniel Espinosa Sanchez*",
+            "18. Adriana Sarahi Malpica Ramos",
             "19. Alejandro Garcia Pelayo Banda",
             "21. Arturo Uriel Gonzalez Villarreal",
             /* jueves */
@@ -56,6 +56,7 @@
             "25. Diego Emilio Salas Cruz",
             "26. Daniel Alejandro Gonzalez Salazar",
             "27. Alvaro Marcelo Silva Amaro",
+            "28. Daniel Espinosa Sanchez*",
             /* viernes */
 
 
