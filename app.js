@@ -47,9 +47,9 @@
             "17. César Gabriel Montoya Caballero",
             "18. Daniel Espinosa Sanchez*",
             "19. Alejandro Garcia Pelayo Banda",
-            "20. Gael Alejandro Castro",
-            /* jueves */
             "21. Arturo Uriel Gonzalez Villarreal",
+            /* jueves */
+            "20. Gael Alejandro Castro",
             "22. Emilio Gil Garcia*",
             "23. Andres Herrera Garza",
             "24. Diego Eduardo Garcia Mireles",
