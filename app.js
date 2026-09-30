@@ -66,9 +66,9 @@
 const DIAS = [
     { nombre: "Lunes", fecha: "28 de Septiembre", completado: true, cantidadExpos: 6 },  
     { nombre: "Martes", fecha: "29 de Septiembre", completado: true, cantidadExpos: 7 },
-    { nombre: "Miércoles", fecha: "30 de Septiembre", completado: false, cantidadExpos: 7 },
+    { nombre: "Miércoles", fecha: "30 de Septiembre", completado: true, cantidadExpos: 7 },
     { nombre: "Jueves", fecha: "1 de Octubre", completado: false, cantidadExpos: 8 },
-    { nombre: "Viernes", fecha: "2 de Octubre", completado: false, cantidadExpos: 5 }
+    { nombre: "Viernes", fecha: "2 de Octubre", completado: true, cantidadExpos: 5 }
 ];
 
 // 2. Función para calcular horarios dinámicos según el total de exposiciones del día
