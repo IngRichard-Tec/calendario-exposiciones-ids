@@ -2,12 +2,25 @@
            CONFIGURACIÓN Y DATOS DE ENTRADA
            ========================================== */
 
-        // 1. Datos Generales (Puedes cambiarlos aquí directamente)
+        // 1a. Datos Generales (Puedes cambiarlos aquí directamente)
         const CONFIG = {
             materia: "Ingeniería de Software",
             profesor: "Ing. Ricardo Arturo Elizalde Hernández",
             logoUrl: "img/tecmi.png" // O ruta local: "img/logo.png"
         };
+
+        // 1b. Cargar Información en el Encabezado (ESTO ES LO QUE LO LLAMA)
+        document.addEventListener("DOMContentLoaded", () => {
+            // Agregamos "Materia: " para que mantenga el prefijo dinámicamente
+            document.getElementById('materia-nombre').textContent = `Materia: ${CONFIG.materia}`;
+            document.getElementById('profesor-nombre').textContent = CONFIG.profesor;
+            
+            const logoImg = document.getElementById('logo-uni');
+            if (logoImg) {
+                logoImg.src = CONFIG.logoUrl;
+            }
+        });
+
 
         // 2. ARREGLO DE EXPOSICIONES (30 temas/alumnos en total = 6 por día × 5 días)
         // Puedes cambiar los nombres libremente. Se asignarán automáticamente en orden.
