@@ -45,9 +45,9 @@
             "15. Melissa Yaretzi Hernandez Flores",
             "16. Ricardo Aldair Delgado de la Fuente",
             "17. César Gabriel Montoya Caballero",
-            "18. Adriana Sarahi Malpica Ramos",
             "19. Alejandro Garcia Pelayo Banda",
             "21. Arturo Uriel Gonzalez Villarreal",
+            "18. Adriana Sarahi Malpica Ramos",
             /* jueves */
             "20. Gael Alejandro Castro",
             "22. Emilio Gil Garcia*",
