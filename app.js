@@ -34,17 +34,17 @@
             "17. César Gabriel Montoya Caballero",
             "18. Daniel Espinosa Sanchez*",
             "19. Alejandro Garcia Pelayo Banda",
-            /* jueves */
             "20. Gael Alejandro Castro",
-            "21. Daniel Espinoza Sanchez",
-            "22. Arturo Uriel Gonzalez Villarreal",
-            "23. Emilio Gil Garcia*",
-            "24. Andres Herrera Garza",
-            "25. Diego Eduardo Garcia Mireles",
+            /* jueves */
+            "21. Arturo Uriel Gonzalez Villarreal",
+            "22. Emilio Gil Garcia*",
+            "23. Andres Herrera Garza",
+            "24. Diego Eduardo Garcia Mireles",
+            "25. Diego Emilio Salas Cruz",
+            "26. Daniel Alejandro Gonzalez Salazar",
+            "27. Alvaro Marcelo Silva Amaro",
             /* viernes */
-            "26. Diego Emilio Salas Cruz",
-            "27. Daniel Alejandro Gonzalez Salazar",
-            "28. Alvaro Marcelo Silva Amaro",
+
 
         ];
 
@@ -52,8 +52,8 @@
 const DIAS = [
     { nombre: "Lunes", fecha: "28 de Septiembre", completado: true, cantidadExpos: 6 },  
     { nombre: "Martes", fecha: "29 de Septiembre", completado: true, cantidadExpos: 7 },
-    { nombre: "Miércoles", fecha: "30 de Septiembre", completado: false, cantidadExpos: 6 },
-    { nombre: "Jueves", fecha: "1 de Octubre", completado: false, cantidadExpos: 6 },
+    { nombre: "Miércoles", fecha: "30 de Septiembre", completado: false, cantidadExpos: 7 },
+    { nombre: "Jueves", fecha: "1 de Octubre", completado: false, cantidadExpos: 7 },
     { nombre: "Viernes", fecha: "2 de Octubre", completado: false, cantidadExpos: 6 }
 ];
 
