@@ -51,10 +51,10 @@
             /* jueves */
             "20. Gael Alejandro Castro",
             "22. Emilio Gil Garcia*",
+            "26. Alvaro Marcelo Silva Amaro",
             "23. Diego Eduardo Garcia Mireles",
             "24. Diego Emilio Salas Cruz",
             "25. Daniel Alejandro Gonzalez Salazar",
-            "26. Alvaro Marcelo Silva Amaro",
             "27. Daniel Espinosa Sanchez*",
             "28. Andres Herrera Garza",
             /* viernes */
